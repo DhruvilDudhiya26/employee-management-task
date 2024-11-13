@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './assets/sass/main.scss'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { makeServer } from './api/server';
+
+if(process.env.NODE_ENV === 'development'){
+  console.log(makeServer);
+  makeServer();
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
